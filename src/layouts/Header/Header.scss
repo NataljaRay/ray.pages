@@ -1,0 +1,64 @@
+.header {
+  position: sticky;
+  z-index: 100;
+  top: 0;
+  width: 100%;
+  //padding-block: 24px;
+  padding-block: fluid(24, 16); // от 24 к 16 (на мобиле)
+  animation-name: scrolling-header;
+  animation-fill-mode: both;
+  animation-timeline: scroll();
+  animation-range: 0 100px;
+
+  border-bottom: 1px solid transparent;
+  
+  @keyframes scrolling-header {
+    to {
+      padding-block: 12px;
+      background-color: var(--color-rose);
+      //box-shadow: 0 0 30px 30px var(--color-rose);
+      border-color: var(--color-red);
+    }
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 16px;
+  }
+
+  &__logo {
+    font-family: var(--font-family-logo);
+    color: var(--color-red);
+    @include fluid-text(40, 30);
+    //font-size: 40px;
+  }
+
+  &__menu {
+
+    &-list {
+      display: flex;
+      align-items: center;
+      column-gap: 24px;
+    }
+
+    &-link {
+      padding: 6px 0;
+      border-top: 4px solid transparent;
+      border-bottom: 4px solid transparent;
+      font-weight: 500;
+      //font-size: fluid(15, 20);
+      font-size: 15px;//??
+
+      @include hover {
+        color: var(--color-red);
+      }
+
+      &.is-active {
+        border-bottom-color: var(--color-red);
+        pointer-events: none;
+      }
+    }
+  }
+}
