@@ -1,0 +1,61 @@
+.button {
+  @include flex-center(true);
+  //padding: 6px 40px;
+  //padding: fluid-to-laptop(18,14) fluid-to-laptop(24,20);
+  padding: fluid-to-laptop(11,6) fluid-to-laptop(40,20);
+  font-weight: 600;
+  color: var(--color-white-true);
+  background-color: var(--color-red);
+  border: none;
+  //border-radius: 7px;
+  border-radius: 7px;
+  user-select: none;
+  cursor: pointer;
+
+
+  @include laptop{//????
+    border-radius: 4px;
+  }
+
+  @include hover {
+    color: var(--color-white-true);
+    background-color: var(--color-dark-red);
+  }
+
+  &:active {
+    scale: 1.05;
+  }
+
+  &:disabled {
+    opacity: .5;
+    pointer-events: none;
+  }
+
+  &:has(.button__icon:only-child) {
+    padding: 0;
+  }
+
+  &--brown {
+    background-color: var(--color-brown);
+  }
+
+  &--transparent {
+    background-color: transparent;
+    fill: var(--color-red);
+
+    @include hover {
+      background-color: transparent;
+      fill: var(--color-dark-red);
+    }
+
+    &:has(.button__icon:only-child) {
+      @include square(32px);
+
+      .button__icon {
+        --icon-size: 32px;
+        //--icon-size: #{fluid-to-laptop(32,24)};
+      }
+    }
+  }
+
+}

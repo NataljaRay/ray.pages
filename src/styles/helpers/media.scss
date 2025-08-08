@@ -9,6 +9,17 @@ $mobile-s:  480px;
   }
 }
 
+@mixin menu-visible {
+  @media (width > 1120px) {
+    @content;
+  }
+}
+@mixin menu-visible-low {
+  @media (width <= 1120px) {
+    @content;
+  }
+}
+
 @mixin laptop {
   @media (width <= $laptop) {
     @content;

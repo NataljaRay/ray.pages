@@ -57,7 +57,7 @@ input,
 textarea,
 select,
 svg * {
-  transition-duration: var(--transition-duration);
+  transition-duration: var(--transition-duration)!important;
 }
 
 a {

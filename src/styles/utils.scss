@@ -9,6 +9,12 @@
   @include visually-hidden;
 }
 
+.visible-menu {
+  @include menu-visible {
+    display: none !important;
+  }
+}
+
 .visible-tablet {
   @include tablet-above {
     display: none !important;
