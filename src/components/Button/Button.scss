@@ -58,4 +58,12 @@
     }
   }
 
+  &--transparent-white {
+    fill: var(--color-white-true);
+
+    @include hover {
+      fill: var(--color-rose);
+    }
+  }
+
 }

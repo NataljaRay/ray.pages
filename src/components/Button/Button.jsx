@@ -5,6 +5,7 @@ import Icon from "../Icon";
 const Button = (props) => {
     const {
         className,
+        customClass,
         type = 'button',
         href,
         target,
@@ -39,6 +40,7 @@ const Button = (props) => {
             className={classNames(className, 'button', {
                 [`button--${mode}`]: mode,
                 [`button--${color}`]: color,
+                [`${customClass}`]: customClass,
             })}
             title={title}
             aria-label={title}

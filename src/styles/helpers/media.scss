@@ -10,12 +10,12 @@ $mobile-s:  480px;
 }
 
 @mixin menu-visible {
-  @media (width > 1120px) {
+  @media (width > 1129px) {
     @content;
   }
 }
 @mixin menu-visible-low {
-  @media (width <= 1120px) {
+  @media (width <= 1129px) {
     @content;
   }
 }

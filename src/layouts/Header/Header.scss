@@ -4,7 +4,9 @@
   top: 0;
   width: 100%;
   //padding-block: 24px;
-  padding-block: fluid(24, 16); // от 24 к 16 (на мобиле)
+  //padding-block: fluid(24, 16); // от 24 к 16 (на мобиле)
+  padding-block: fluid(16, 8); // от 24 к 16 (на мобиле)
+  //padding-block: 16px; // от 24 к 16 (на мобиле)
   animation-name: scrolling-header;
   animation-fill-mode: both;
   animation-timeline: scroll();
@@ -34,19 +36,39 @@
     width: 100%;
     height: 100%;
     background-color: var(--color-rose);
+    //background-color: var(--color-black);
     border: none;
     padding: 20px;
 
 
     flex-direction: column;
     row-gap: 20px;
+    //transition-duration: var(--transition-duration);
+    //transition-duration: var(--transition-duration-longer);
+    transition-duration: 1s;
+      transition-behavior: allow-discrete;
 
     @include menu-visible {
       display: contents;
     }
 
+    //@mixin starting-styles {
+    //  @media (prefers-reduced-motion: reduce) {
+    //  opacity: 0;
+    //  translate: 50%;
+    //  //transform: translateX(50%);
+    //
+    //}
+    //}
+
     &[open] {
       display: flex;
+
+      //@starting-style {
+      //  @include starting-styles;
+      //}
+      opacity: 1;
+      transform: translateX(0);
 
       @include menu-visible-low {
         //flex-direction: column;
@@ -56,12 +78,18 @@
         //height: 100vh;
       }
     }
+    &:not([open]){
+      //@include starting-styles;
+        opacity: 0;
+      transform: translateX(100%);
+    }
   }
 
   &__logo {
     font-family: var(--font-family-logo);
     color: var(--color-red);
     @include fluid-text(40, 30);
+    z-index: 1;
     //font-size: 40px;
   }
 
@@ -82,7 +110,7 @@
         flex-wrap: wrap;
       }
 
-      @media (height > 450px) {
+      @media (height > 450px) and (orientation: portrait) {
         flex-direction: column;
       }
     }

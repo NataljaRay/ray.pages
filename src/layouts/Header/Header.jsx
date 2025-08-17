@@ -2,6 +2,7 @@ import './Header.scss'
 import classNames from "classnames";
 import Button from "../../components/Button";
 import BurgerButton from "../../components/BurgerButton";
+import SocialLinks from "../../components/SocialLinks";
 
 const Header = (props) => {
     const {
@@ -18,11 +19,11 @@ const Header = (props) => {
         {label: 'Контакты', href: '/contacts'},
     ]
 
-    const socialLinks = [
-        {label: 'vk', href: 'https://vk.com/nataljaray'},
-        {label: 'tg', href: 'https://t.me/nataljaray_music'},
-        {label: 'link', href: '/'},
-    ]
+    // const socialLinks = [
+    //     {label: 'vk', href: 'https://vk.com/nataljaray'},
+    //     {label: 'tg', href: 'https://t.me/nataljaray_music'},
+    //     {label: 'link', href: '/'},
+    // ]
 
     return (
         <header className="header" data-js-overlay-menu="">
@@ -46,18 +47,19 @@ const Header = (props) => {
                             ))}
                         </ul>
                     </nav>
-                    <div className="header__actions">
-                        {socialLinks.map(({label, href}, index) => (
-                            <Button href={href}
-                                    label={label}
-                                    isLabelHidden
-                                    iconName={label}
-                                    mode="transparent"
-                                    key={index}
-                                    target="_blank"
-                            />
-                        ))}
-                    </div>
+                    <SocialLinks className="header__actions"/>
+                    {/*<div className="header__actions">*/}
+                    {/*    {socialLinks.map(({label, href}, index) => (*/}
+                    {/*        <Button href={href}*/}
+                    {/*                label={label}*/}
+                    {/*                isLabelHidden*/}
+                    {/*                iconName={label}*/}
+                    {/*                mode="transparent"*/}
+                    {/*                key={index}*/}
+                    {/*                target="_blank"*/}
+                    {/*        />*/}
+                    {/*    ))}*/}
+                    {/*</div>*/}
                     <div className="header__actions">
                         <Button className="header__button"
                                 href="/"

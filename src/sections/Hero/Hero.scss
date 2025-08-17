@@ -1,0 +1,43 @@
+.hero {
+  //min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  background: url("../../assets/images/hero/hero-bg.png") 50%/cover no-repeat;
+  height: 650px;
+  margin-top: -93px;
+
+  @media (height <= 450px) and (orientation: landscape) {
+    height: 100vh;
+    margin-top: -19.25vh;
+  }
+
+  @media (height > 450px) and (orientation: portrait) {
+    height: 100vw;
+    margin-top: -7vh;
+  }
+
+  &__inner {
+    min-height: 100%;
+  }
+  &__body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+  }
+  &__intro {
+    width: 50%;
+    text-align: center;
+  }
+  &__title {
+    @include fluid-text(96, 34);
+    font-weight: 400;
+    margin-bottom: 4px;
+  }
+  &__description {
+    font-size: 20px;
+    color: var(--color-brown-light);
+  }
+}

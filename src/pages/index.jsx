@@ -1,3 +1,5 @@
+// import Hero from "../sections/Hero";
+
 export const metadata = {
     title: 'Home',
 }
@@ -5,7 +7,8 @@ export const metadata = {
 export default function () {
   return (
     <>
-        <h1>Natalja Ray</h1>
+        {/*<h1>Natalja Ray</h1>*/}
+        {/*<Hero/>*/}
     </>
   )
 }

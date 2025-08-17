@@ -1,0 +1,26 @@
+.footer {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  padding: 80px 0 27px;
+
+  &__inner {
+    text-align: center;
+    h5, p {color: currentColor}
+  }
+
+  &__title,
+  &__text {
+    margin-bottom: 32px;
+  }
+  &__links {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+  }
+  &__button {
+    margin: 32px auto 45px;
+  }
+  &__copyright {
+    @include fluid-text(16, 12);
+  }
+}
